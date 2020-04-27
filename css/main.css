@@ -113,7 +113,6 @@ nav i {
 
 #portfolio .grid {
   grid-template-columns: repeat(auto-fit, 291px);
-  justify-content: space-between;
   grid-row-gap: 40px;
   grid-column-gap: 20px;
 }
@@ -455,6 +454,7 @@ p {
   grid-column-gap: 30px;
   grid-row-gap: 25px;
   margin-top: 60px;
+  justify-content: center;
 }
 
 h6 {
@@ -471,10 +471,7 @@ h6 {
   font-size: 30px;
   color: white;
   cursor: pointer;
-}
-
-nav .fa-bars {
-  color: white;
+  display: none;
 }
 
 #home .onscroll .fa-bars {
@@ -484,6 +481,10 @@ nav .fa-bars {
   color: white;
   cursor: pointer;
   font-size: 22px;
+}
+
+.fa-bars {
+  display: none;
 }
 
 @media all and (max-width: 730px) {
@@ -515,10 +516,31 @@ nav .fa-bars {
     backdrop-filter: grayscale(100%) blur(4px);
     transition: 0.4s ease-in-out;
     z-index: -1000;
+    pointer-events: none;
     opacity: 0;
   }
   #home nav.active {
     z-index: 1000;
     opacity: 1;
+    pointer-events: all;
+  }
+  .container {
+    padding: 0 45px;
+  }
+  footer {
+    flex-wrap: wrap;
+  }
+  footer .icons {
+    font-size: 18px;
+    width: 220px;
+  }
+  footer .icons .icon {
+    width: 30px;
+    height: 30px;
+    font-size: 18px;
+  }
+  .fa-close,
+  .fa-bars {
+    display: inline;
   }
 }
