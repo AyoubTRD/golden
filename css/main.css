@@ -275,6 +275,110 @@ body {
   max-width: 100%;
 }
 
+#contact {
+  background: #222;
+  position: relative;
+}
+
+#contact h2 {
+  color: #fff;
+}
+
+#contact .map {
+  position: absolute;
+  right: 0;
+  bottom: 0;
+  z-index: 0;
+  max-width: 70%;
+  pointer-events: none;
+}
+
+#contact form {
+  z-index: 1;
+}
+
+#contact .fields {
+  margin-bottom: 15px;
+  display: flex;
+  flex-direction: column;
+  align-items: stretch;
+  justify-content: space-between;
+}
+
+#contact .field {
+  height: 27%;
+}
+
+#contact .text-field {
+  height: 91%;
+}
+
+#contact .field input,
+#contact .field textarea {
+  border: none;
+  background-color: #fff;
+  border-radius: 2px;
+  height: 100%;
+  width: 100%;
+  padding: 10px 10px;
+}
+
+#contact ::placeholder {
+  color: #777;
+  text-transform: uppercase;
+  font-family: inherit;
+  font-weight: 700;
+  font-size: 12px;
+}
+
+#contact .grid {
+  grid-template-columns: repeat(auto-fit, minmax(350px, 1fr));
+  grid-template-rows: repeat(auto-fit, 180px);
+  grid-column-gap: 20px;
+}
+
+@media all and (max-width: 906px) {
+  #contact .grid {
+    grid-template-rows: 180px 180px;
+  }
+}
+
+footer {
+  padding: 20px 0;
+}
+
+footer .container {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+footer .icons {
+  display: flex;
+  min-width: 25%;
+  max-width: 200px;
+  justify-content: space-between;
+}
+
+footer .icon {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  border-radius: 50%;
+  width: 40px;
+  height: 40px;
+  background-color: #222;
+  color: #fff;
+  font-size: 20px;
+  cursor: pointer;
+  transition: 0.25s;
+}
+
+footer .icon:hover {
+  background-color: #fed136;
+  color: #222;
+}
+
 .container {
   padding: 0 85px;
   max-width: 1280px;
@@ -283,10 +387,13 @@ body {
 
 .btn {
   border: none;
-  padding: 12px 29px;
+  padding: 14px 32px;
   text-decoration: none;
   text-transform: uppercase;
   transition: 0.2s;
+  cursor: pointer;
+  font-weight: 700;
+  border-radius: 1px;
 }
 
 .btn-primary {
