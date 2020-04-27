@@ -27,9 +27,20 @@ body {
   top: 0;
   left: 0;
   width: 100%;
+  transition: 0.6s ease-in-out;
+  z-index: 1000;
 }
 
-#home .nav-container {
+#home header.onscroll {
+  background-color: white;
+  box-shadow: 0 5px 15px 2px rgba(34, 34, 34, 0.336);
+}
+
+#home header.onscroll a {
+  color: #222;
+}
+
+.nav-container {
   height: 80px;
   display: flex;
   align-items: center;
@@ -39,16 +50,18 @@ body {
 #home h1 {
   font-family: "Wisdom Script", Script;
   color: #fed136;
+  transform: translateY(-25%);
 }
 
-#home nav {
+nav {
   display: flex;
   justify-content: space-between;
   min-width: 400px;
   width: 45%;
 }
 
-#home nav a {
+nav a,
+nav i {
   color: white;
   text-decoration: none;
   text-transform: uppercase;
@@ -56,7 +69,8 @@ body {
   transition: 0.2s;
 }
 
-#home nav a:hover {
+#home nav a:hover,
+#home nav a.active {
   color: #fed136;
 }
 
@@ -447,4 +461,64 @@ h6 {
   color: #222;
   font-size: 18px;
   text-transform: uppercase;
+}
+
+.fa-close {
+  position: fixed;
+  z-index: 2001;
+  top: 33px;
+  right: 35px;
+  font-size: 30px;
+  color: white;
+  cursor: pointer;
+}
+
+nav .fa-bars {
+  color: white;
+}
+
+#home .onscroll .fa-bars {
+  color: #222;
+}
+#home .fa-bars {
+  color: white;
+  cursor: pointer;
+  font-size: 22px;
+}
+
+@media all and (max-width: 730px) {
+  #home nav a {
+    color: white !important;
+    font-size: 35px;
+  }
+  #home nav a.active,
+  #home nav a:hover {
+    color: #fed136 !important;
+  }
+  #home nav {
+    flex-direction: column;
+    position: fixed;
+    left: 0;
+    top: 50%;
+    transform: translateY(-50%);
+    min-width: 0;
+    height: 100vh;
+    padding: 24vh 0;
+    width: 100%;
+    background-image: linear-gradient(
+      to right,
+      rgba(34, 34, 34, 0.7) 0%,
+      rgba(34, 34, 34, 0.85) 10%,
+      rgba(34, 34, 34, 0.85) 70%,
+      rgba(34, 34, 34, 0.7) 100%
+    );
+    backdrop-filter: grayscale(100%) blur(4px);
+    transition: 0.4s ease-in-out;
+    z-index: -1000;
+    opacity: 0;
+  }
+  #home nav.active {
+    z-index: 1000;
+    opacity: 1;
+  }
 }
